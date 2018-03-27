@@ -1,0 +1,30 @@
+{
+    "name": "pedroac/routing",
+    "type": "library",
+    "description": "Flexible HTTP routing library.",
+    "keywords": ["router", "http", "pretty-urls"],
+    "authors": [
+        {
+            "name": "Pedro Amaral Couto",
+            "email": "pedro.amaral.couto@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "config": {
+        "vendor-dir": "./php/vendor"
+    },
+    "autoload": {
+        "psr-4": {"pedroac\\routing\\": "lib"}
+    },
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.1.3",
+        "squizlabs/php_codesniffer": "@stable",
+        "phpmd/phpmd" : "@stable",
+        "phpdocumentor/phpdocumentor": "@stable",
+        "codacy/coverage": "dev-master"
+    }
+}
