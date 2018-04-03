@@ -15,7 +15,7 @@
         "vendor-dir": "./php/vendor"
     },
     "autoload": {
-        "psr-4": {"pedroac\\routing\\": "lib"}
+        "psr-4": {"pedroac\\routing\\": "php/lib"}
     },
     "require": {
         "php": ">=7.1"
