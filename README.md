@@ -10,6 +10,11 @@ Run from the library root folder:
 
 If the tests were successful, `php/tests/coverage-html` should have the code coverage report.
 
+## Examples
+
+- [Hash path router](php/examples/hash-path-router.php)
+- [Regex path router](php/examples/regex-path-router.php)
+
 ## Versioning
 
 It should be used [SemVer](http://semver.org/) for versioning.
