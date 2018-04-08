@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- Path router implementation using place holders
 - Path router implementation using regex
 - Path router implementation using an associative array
 - Path routing interfaces

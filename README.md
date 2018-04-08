@@ -16,6 +16,8 @@ If the tests were successful, `php/tests/coverage-html` should have the code cov
 
 - [Hash path router](php/examples/hash-path-router.php)
 - [Regex path router](php/examples/regex-path-router.php)
+- [Pattern path router](php/examples/pattern-path-router.php)
+- [Custom pattern path router](php/examples/custom-pattern-path-router.php)
 
 ## Versioning
 
