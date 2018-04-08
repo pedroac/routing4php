@@ -12,7 +12,7 @@ use \pedroac\routing\RouteMatch;
  * @author Pedro Amaral Couto
  * @license MIT
  */
-class HashRouter implements \pedroac\routing\PathRouter
+class HashRouter implements \pedroac\routing\CanRoutePath
 {
     /**
      * Callables (the values) associated with paths (the keys).

@@ -14,7 +14,7 @@ use \pedroac\routing\PathRouter\RegexRouter\RegexCallablePair;
  * @author Pedro Amaral Couto
  * @license MIT
  */
-class RegexRouter implements \pedroac\routing\PathRouter
+class RegexRouter implements \pedroac\routing\CanRoutePath
 {
     /**
      * A list of regex and callable pairs.

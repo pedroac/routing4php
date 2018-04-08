@@ -8,7 +8,7 @@ namespace pedroac\routing;
  * @author Pedro Amaral Couto <pedro.amaral.couto@gmail.com>
  * @license MIT
  */
-interface PathRouter
+interface CanRoutePath
 {
     /**
      * Attempt to match a specified route path against mapped routes.
