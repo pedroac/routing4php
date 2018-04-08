@@ -1,5 +1,6 @@
 # pedroac\routing for PHP
 
+[![Build Status](https://travis-ci.org/pedroac/routing4php.svg?branch=master)](https://travis-ci.org/pedroac/routing4php)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/626ac4d19104499d88692b7e1232ae3b)](https://app.codacy.com/app/pedroac/routing4php?utm_source=github.com&utm_medium=referral&utm_content=pedroac/routing4php&utm_campaign=badger)
 
 A flexible routing library that maps HTTP requests to a set of variables and callables.
