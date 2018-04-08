@@ -10,6 +10,9 @@ use \pedroac\routing\RouteMatch;
  * PatternRouter path match function should behave like the
  * RegexRouter path match function.
  * 
+ * @example "php/examples/pattern-path-router.php"
+ * @example "php/examples/custom-pattern-path-router.php"
+ * 
  * @author Pedro Amaral Couto
  * @license MIT
  */

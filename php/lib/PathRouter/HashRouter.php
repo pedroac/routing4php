@@ -9,6 +9,8 @@ use \pedroac\routing\RouteMatch;
  * Instead of transversing a list, an associative array
  * is used to find a match from a key (the path).
  * 
+ * @example "php/examples/hash-path-router.php"
+ * 
  * @author Pedro Amaral Couto
  * @license MIT
  */

@@ -11,6 +11,8 @@ use \pedroac\routing\PathRouter\RegexRouter\RegexCallablePair;
 /**
  * Path router using regex patterns.
  * 
+ * @example "php/examples/regex-path-router.php"
+ * 
  * @author Pedro Amaral Couto
  * @license MIT
  */
