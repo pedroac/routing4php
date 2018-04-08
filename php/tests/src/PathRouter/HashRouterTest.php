@@ -37,5 +37,9 @@ class HashRouterTest extends TestCase
             $func3,
             $router->match('/aa/bc')->getCallable()
         );
+        $this->assertSame(
+            null,
+            $router->match('/aa/bcc')->getCallable()
+        );
     }
 }
