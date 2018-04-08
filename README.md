@@ -12,6 +12,14 @@ Run from the library root folder:
 
 If the tests were successful, `php/tests/coverage-html` should have the code coverage report.
 
+## Generating HTML documentation
+
+Run from the library root folder:
+
+`sh scripts/generate-docs.sh`
+
+If the documentation was generated successfully, the folder `docs` should have the HTML documentation.
+
 ## Examples
 
 - [Hash path router](php/examples/hash-path-router.php)
