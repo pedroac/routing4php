@@ -18,7 +18,12 @@
         "psr-4": {"pedroac\\routing\\": "php/lib"}
     },
     "require": {
-        "php": ">=7.1"
+        "php": ">=7.1",
+        "psr/http-message": "@stable",
+        "psr/http-server-handler": "@stable"
+    },
+    "suggest": {
+        "jasny/http-message": "@stable"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.1.2",
@@ -26,5 +31,6 @@
         "phpmd/phpmd" : "@stable",
         "phpdocumentor/phpdocumentor": "@stable",
         "codacy/coverage": "@stable",
+        "jasny/http-message": "@stable"
     }
 }

@@ -8,29 +8,33 @@ $router = new pedroac\routing\HttpRouter(
     )
 );
 $router->map(
-    'GET', 'users',
+    'GET', '/users',
     function () {
         echo "USERS\n";
     }
 );
 $router->map(
-    'POST', 'users',
+    'POST', '/users',
     function () {
         echo "USERS\n";
     }
 );
 $router->map(
-    'GET', 'users/<user_id>',
+    'GET', '/users/<user_id>',
     function ($vars) {
         echo "USER {$vars["user_id"]}\n";
     }
 );
 $router->map(
-    'PUT', 'users/<user_id>',
+    'PUT', '/users/<user_id>',
     function ($vars) {
         echo "USER {$vars["user_id"]}\n";
     }
 );
 
-$match = $router->match('PUT', 'users/pedroac');
-$match();
+$match = $router->match(
+    (new Jasny\HttpMessage\ServerRequestInterface)
+        ->withUri(new Jasny\HttpMessage\Uri('http://test/users/pedroac'))
+        ->withMethod('GET')
+);
+($match->getCallable())($match->getVars());

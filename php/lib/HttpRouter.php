@@ -1,6 +1,7 @@
 <?php
 
 namespace pedroac\routing;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * HTTP request router.
@@ -55,15 +56,22 @@ class HttpRouter
     /**
      * Attempt to match a HTTP request against mapped routes.
      *
-     * @param string $method
-     * @param string $path
+     * @param ServerRequestInterface $request HTTP request.
      * @return RouteMatch
      */
-    public function match(string $method, string $path): RouteMatch
+    public function match(ServerRequestInterface $request): RouteMatch
     {
-        $pathMatch = $this->pathRouter->match($path);
+        $pathMatch = $this->pathRouter->match(
+            $request->getUri()->getPath()
+        );
+        if (!$pathMatch->getCallable()) {
+            return $pathMatch;
+        }
         $methodsRouter = $pathMatch->getCallable()[0];
-        return $methodsRouter->match($method, $pathMatch->getVars());
+        return $methodsRouter->match(
+            $request->getMethod(),
+            $pathMatch->getVars()
+        );
     }
 
     /**

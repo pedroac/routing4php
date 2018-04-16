@@ -29,20 +29,32 @@ class HttpRouterTest extends TestCase
         $router = new HttpRouter(
             new HashRouter
         );
-        $router->map('GET', 'home', $func1);
-        $router->map('GET', 'home/about', $func2);
-        $router->map('GET', 'home/sitemap', $func3);
+        $router->map('GET', '/home', $func1);
+        $router->map('GET', '/home/about', $func2);
+        $router->map('GET', '/home/sitemap', $func3);
         $this->assertSame(
             $func1,
-            $router->match('GET', 'home')->getCallable()
+            $router->match(
+                (new Jasny\HttpMessage\ServerRequest)
+                    ->withUri(new Jasny\HttpMessage\Uri('http://test/home'))
+                    ->withMethod('GET')
+            )->getCallable()
         );
         $this->assertSame(
             $func2,
-            $router->match('GET', 'home/about')->getCallable()
+            $router->match(
+                (new Jasny\HttpMessage\ServerRequest)
+                    ->withUri(new Jasny\HttpMessage\Uri('http://test/home/about'))
+                    ->withMethod('GET')
+            )->getCallable()
         );
         $this->assertSame(
             $func3,
-            $router->match('GET', 'home/sitemap')->getCallable()
+            $router->match(
+                (new Jasny\HttpMessage\ServerRequest)
+                    ->withUri(new Jasny\HttpMessage\Uri('http://test/home/sitemap'))
+                    ->withMethod('GET')
+            )->getCallable()
         );
     }
 
@@ -62,20 +74,32 @@ class HttpRouterTest extends TestCase
         $router = new HttpRouter(
             new HashRouter
         );
-        $router->map('GET', 'home', $func1);
-        $router->map('POST', 'home', $func2);
-        $router->map('DELETE', 'home', $func3);
+        $router->map('GET', '/home', $func1);
+        $router->map('POST', '/home', $func2);
+        $router->map('DELETE', '/home', $func3);
         $this->assertSame(
             $func1,
-            $router->match('GET', 'home')->getCallable()
+            $router->match(
+                (new Jasny\HttpMessage\ServerRequest)
+                    ->withUri(new Jasny\HttpMessage\Uri('http://test/home'))
+                    ->withMethod('GET')
+            )->getCallable()
         );
         $this->assertSame(
             $func2,
-            $router->match('POST', 'home')->getCallable()
+            $router->match(
+                (new Jasny\HttpMessage\ServerRequest)
+                    ->withUri(new Jasny\HttpMessage\Uri('http://test/home'))
+                    ->withMethod('POST')
+            )->getCallable()
         );
         $this->assertSame(
             $func3,
-            $router->match('DELETE', 'home')->getCallable()
+            $router->match(
+                (new Jasny\HttpMessage\ServerRequest)
+                    ->withUri(new Jasny\HttpMessage\Uri('http://test/home'))
+                    ->withMethod('DELETE')
+            )->getCallable()
         );
     }
 
@@ -91,11 +115,11 @@ class HttpRouterTest extends TestCase
         $router = new HttpRouter(
             new HashRouter
         );
-        $router->map('GET', 'home', $func1);
-        $router->map('POST', 'home', $func1);
-        $router->map('DELETE', 'home', $func1);
-        $router->map('GET', 'home/about', $func1);
-        $options = $router->getPathOptions('home');
+        $router->map('GET', '/home', $func1);
+        $router->map('POST', '/home', $func1);
+        $router->map('DELETE', '/home', $func1);
+        $router->map('GET', '/home/about', $func1);
+        $options = $router->getPathOptions('/home');
         sort($options);
         $this->assertEquals(
             ['DELETE', 'GET', 'POST'],
@@ -122,10 +146,10 @@ class HttpRouterTest extends TestCase
         $router = new HttpRouter(
             new HashRouter
         );
-        $router->map('GET', 'home', $func1);
-        $router->map('POST', 'home', $func1);
-        $router->map('DELETE', 'home', $func1);
-        $options = $router->getPathOptions('home/about');
+        $router->map('GET', '/home', $func1);
+        $router->map('POST', '/home', $func1);
+        $router->map('DELETE', '/home', $func1);
+        $options = $router->getPathOptions('/home/about');
         $this->assertEquals(
             array(),
             $options
